@@ -194,7 +194,7 @@ def main():
 
     # Peer Comparisons
     with tab4:
-        st.subheader("Peers by Industry")
+        st.subheader("Peers by Sectors")
         industry_peers = df[(df["industry"] == latest["industry"]) & (df["Company_symbol"] != company)]
         peers_df = industry_peers.groupby("Company_symbol").apply(
             lambda x: x.loc[x['quarter_date'].idxmax()]
@@ -229,3 +229,4 @@ def main():
 # -------------------------------
 if __name__ == "__main__":
     main()
+
